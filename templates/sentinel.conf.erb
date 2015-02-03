@@ -14,6 +14,14 @@ pidfile <%= @conf_pidfile_real %>
 port <%= @conf_port %>
 <%- end -%>
 
+# If you want you can bind a single interface, if the bind option is not
+# specified all the interfaces will listen for incoming connections.
+#
+# bind 127.0.0.1
+<%- if @conf_bind -%>
+bind <%= @conf_bind %>
+<%- end -%>
+
 # dir <working-directory>
 # Every long running process should have a well-defined working directory.
 # For Redis Sentinel to chdir to /tmp at startup is the simplest thing

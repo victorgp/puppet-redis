@@ -41,6 +41,7 @@
 #
 class redis::sentinel (
   $conf_port                = '26379',
+  $conf_bind                = '0.0.0.0',
   $conf_dir                 = '/tmp/redis',
   $conf_daemonize           = 'yes',
   $sentinel_confs           = [],
