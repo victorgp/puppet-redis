@@ -16,6 +16,9 @@ Facter.add("redis_version", :timeout => 20) do
         end
 
         case redis_version
+            when /3\.0\.[0-9]/
+                #set version to 3.0
+                redis_version = '3.0.x'
             when /2\.8\.[0-9]/
                 #set version to 2.8
                 redis_version = '2.8.x'
@@ -51,6 +54,9 @@ Facter.add("redis_version", :timeout => 20) do
         end
 
         case redis_version
+            when /3\.0\.[0-9]/
+                #set version to 3.0
+                redis_version = '3.0.x'
             when /2\.8\.[0-9]/
                 #set version to 2.8
                 redis_version = '2.8.x'
