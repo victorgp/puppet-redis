@@ -102,7 +102,7 @@ class redis::sentinel (
     content => template('redis/sentinel.conf.erb'),
     owner   => redis,
     group   => redis,
-    mode    => '0644',
+    mode    => '0600',
     require => User['redis'],
     notify  => Exec["cp ${conf_sentinel_orig} ${conf_sentinel}"],
   }

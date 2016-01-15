@@ -148,9 +148,9 @@ class redis (
   file { $conf_redis:
     path    => $conf_redis,
     content => template('redis/redis.conf.erb'),
-    owner   => root,
-    group   => root,
-    mode    => '0644',
+    owner   => 'redis',
+    group   => 'redis',
+    mode    => '0600',
     require => Package['redis'],
   }
 
